@@ -14,14 +14,12 @@ import {CryptoContext} from '../../context/crypto-context';
  * @returns JSX - Coin Slug, Coin Value, MCAP
  */
 const MarketAssets = () => {
-    const [currencyValue] = useContext(CurrencyContext) //Context Provider
-
-    const [cryptoValue] = useContext(CryptoContext);
-
+    const [currencyValue] = useContext(CurrencyContext) //Context Provider [USD, EUR, GBP]
+    const [cryptoValue] = useContext(CryptoContext); // Crypto Provider [BTC, ETH, LTH]
 
     const [currencies, setCurrencies] = useState([]);
-
     const url = 'https://api.pro.coinbase.com';
+    
     useEffect(() => {
         let items = [];
         const apiCall = async() => {
@@ -36,6 +34,8 @@ const MarketAssets = () => {
 
         apiCall()
     },[currencyValue])
+
+
 
     return(
         <div>
