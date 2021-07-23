@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import {CurrencyContext} from '../../context/currency-context'
 import {CryptoContext} from '../../context/crypto-context';
 
+import {base_url} from '../../utils/global_variables'
 
 /**
  * MarketAssets Component.
@@ -18,12 +19,12 @@ const MarketAssets = () => {
     const [cryptoValue] = useContext(CryptoContext); // Crypto Provider [BTC, ETH, LTH]
 
     const [currencies, setCurrencies] = useState([]);
-    const url = 'https://api.pro.coinbase.com';
+    
     
     useEffect(() => {
         let items = [];
         const apiCall = async() => {
-            await fetch(`${url}/products/BTC-${currencyValue}/stats`)
+            await fetch(`${base_url}/products/${cryptoValue}-${currencyValue}/stats`)
             .then((res) => res.json())
             .then((data) => (items = data))
             .catch((err) => console.log(err));

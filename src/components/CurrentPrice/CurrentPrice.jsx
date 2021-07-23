@@ -56,7 +56,7 @@ const CurrentPrice = () => {
             }
             if(data.product_id === queryValue){
                 console.log(data);
-                setPrices(data.price)
+                setPrices(Number(data.price).toLocaleString())
             }
         }
 

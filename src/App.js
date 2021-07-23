@@ -3,7 +3,7 @@ import './styles/App.css';
 import {CurrencyContextProvider} from './context/currency-context';
 import {CryptoContextProvider} from './context/crypto-context'
 
-import {MarketAssets, CurrencySet, CryptoSet, CurrentPrice} from './components';
+import {MarketAssets, CurrencySet, CryptoSet, CurrentPrice, HistoryGraph} from './components';
 
 const App = () => {
 
@@ -14,7 +14,9 @@ const App = () => {
         <MarketAssets/>
         <CryptoSet/>
 
-        <CurrentPrice/>
+        {/* <CurrentPrice/> */}
+
+        <HistoryGraph/>
       </CryptoContextProvider>
     </CurrencyContextProvider>
   )
