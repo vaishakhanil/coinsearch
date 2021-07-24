@@ -25,6 +25,8 @@ const CryptoSet = () => {
         background: ${({theme}) => theme.lightBg};
 
         & > svg {
+            width: 2vw;
+            height: 2vw;
             fill: ${({theme}) => theme.text};
             pointer-events: none;
             transition: all 250ms ease-in;
@@ -33,6 +35,13 @@ const CryptoSet = () => {
         &:hover{
             & > svg { 
                 fill: ${({theme}) => theme.toggle};
+            }
+        }
+
+        @media only screen and (min-width: 300px) and (max-width: 500px){
+            & > svg {
+                width: 6vw;
+                height: 6vw;
             }
         }
     `;

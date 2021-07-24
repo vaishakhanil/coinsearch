@@ -16,6 +16,10 @@ const SideBarLayout = styled.div`
     flex-direction: column;
     justify-content:center;
     
+    @media only screen and (min-width: 300px) and (max-width: 500px){
+        width: 20vw;
+    }
+    
 `
 
 

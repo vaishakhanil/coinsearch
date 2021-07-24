@@ -1,7 +1,6 @@
 import React,{useState, useEffect, useContext, useRef} from 'react';
 import {CurrencyContext} from '../../context/currency-context'
 import {CryptoContext} from '../../context/crypto-context';
-import { cleanup } from '@testing-library/react';
 
 
 const CurrentPrice = () => {

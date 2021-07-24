@@ -2,7 +2,9 @@ import React, {useState, useEffect, useContext} from 'react';
 import {CurrencyContext} from '../../context/currency-context'
 import {CryptoContext} from '../../context/crypto-context';
 
-import {base_url} from '../../utils/global_variables'
+import {base_url} from '../../utils/global_variables';
+
+import styled from 'styled-components';
 
 /**
  * MarketAssets Component.
@@ -18,7 +20,11 @@ const MarketAssets = () => {
     const [currencyValue] = useContext(CurrencyContext) //Context Provider [USD, EUR, GBP]
     const [cryptoValue] = useContext(CryptoContext); // Crypto Provider [BTC, ETH, LTH]
 
-    const [currencies, setCurrencies] = useState([]);
+    const [currencies, setCurrencies] = useState({
+        id:'',
+        name:'',
+        details:{}
+    });
     
     
     useEffect(() => {
@@ -29,22 +35,18 @@ const MarketAssets = () => {
             .then((data) => (items = data))
             .catch((err) => console.log(err));
             
-            setCurrencies(items);
-            console.log(items)
+            console.log(items);
+            setCurrencies({id:items.id, name: items.name, details: items.details});
+            console.log(currencies)
         }
 
         apiCall()
     },[currencyValue,cryptoValue])
 
 
-
     return(
         <div>
-            {/* {currencies.map(item => (<div>{item.volume} = {item.open}</div>))} */}
-            {/* {currencies.volume} = {Number(currencies.open).toLocaleString()} <br/>
-            {cryptoValue} */}
-            {currencies.name} {currencies.id}
-            {/* Type: {currencies.details.type}  */}
+            {currencies.details.symbol} {(currencies.name).toUpperCase()} <span>{(currencies.id).toUpperCase()} </span>
         </div>
     )
 }

@@ -24,7 +24,7 @@ export const MainComponent = () => {
 
     const Header = styled.header`
         width: 100%;
-        height: 6vh;
+        height: 10vh;
 
         display:flex;
         justify-content:flex-end;
@@ -37,20 +37,46 @@ export const MainComponent = () => {
             fill: ${({theme}) => theme.text};
         }
     `;
+
+    const H1 = styled.h1`
+        color: ${({theme}) => theme.text};
+        font-family: 'Rajdhani';
+        font-size: 1.5vw;
+        margin-right:auto;
+        padding-left: 2vw;
+    `;
+
+    const Dashboard = styled.div`
+        width: 99%;
+        height: 90%;
+        display:flex;
+    `
+
+    const Heading = styled.div`
+        width: 40%;
+        display:flex;
+        flex-direction:column;
+    `;
+
     return(
         <Layout>
             <SideBar/>
 
             <Display>
                 <Header>
+                    <H1>coinsearch</H1>
                     <CurrencySet/>
                     <a href="https://vaishakhanil.github.io/" target="_blank"><Github/></a> 
                 </Header>
+                <Dashboard>
+                    <Heading>
+                        <MarketAssets/>
+                        <CurrentPrice/> 
+                    </Heading>
+                   
+                    {/* <HistoryGraph/> */}
+                </Dashboard>
                 
-                <MarketAssets/>
-                {/* <CurrentPrice/> */}
-                
-                {/* <HistoryGraph/> */}
             </Display>
         </Layout>
     )

@@ -37,8 +37,11 @@ const HistoryGraph = () => {
 
     
     const GraphWrapper = styled.div`
-      width: 60vw;
+      width: 50vw;
       height: 40vw;
+      display:flex;
+      flex-direction: column;
+      justify-content:space-evenly;
     `;
 
 
@@ -75,6 +78,7 @@ const HistoryGraph = () => {
 
     return(
         <GraphWrapper>
+            <span>Historical Graph</span>
             <Line data={plotData} options={options} />
         </GraphWrapper>
     )
