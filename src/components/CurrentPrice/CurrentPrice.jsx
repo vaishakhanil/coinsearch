@@ -2,6 +2,7 @@ import React,{useState, useEffect, useContext, useRef} from 'react';
 import {CurrencyContext} from '../../context/currency-context'
 import {CryptoContext} from '../../context/crypto-context';
 
+import {PriceValue} from './CurrentPrice.styles'
 
 const CurrentPrice = () => {
     const [currencyValue] = useContext(CurrencyContext) //Context Provider [USD, EUR, GBP]
@@ -80,9 +81,13 @@ const CurrentPrice = () => {
         }
     },[])
 
-    return(<div>
-        {prices}
-    </div>)
+    return(
+    <>
+    <PriceValue>
+        {(currencyValue === "USD") ? "$" : "€"} {prices}
+    </PriceValue>
+    </>
+    )
 }
 
 

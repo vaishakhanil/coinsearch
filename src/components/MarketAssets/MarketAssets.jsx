@@ -4,14 +4,21 @@ import {CryptoContext} from '../../context/crypto-context';
 
 import {base_url} from '../../utils/global_variables';
 
-import styled from 'styled-components';
+import {CurrencyInfoContainer, CurrencyTitle, CurrencyId} from './MarketAssets.styles';
+
+
+import {ReactComponent as BTC} from '../../assets/svg/BTC.svg'
+import {ReactComponent as EOS} from '../../assets/svg/EOS.svg'
+import {ReactComponent as ETH} from '../../assets/svg/ETH.svg'
+import {ReactComponent as XLM} from '../../assets/svg/stellar.svg'
+import { cos } from 'prelude-ls';
 
 /**
  * MarketAssets Component.
  * Websocket - wss://ws-feed.pro.coinbase.com
  * API - https://api.pro.coinbase.com/products
  * 
- * @TODO - Setup Websocket to connect into messari api & pull market assets data
+ * @DONE - Setup Websocket to connect into messari api & pull market assets data
  * 
  * @param {String} coin - Coin slug 
  * @returns JSX - Coin Slug, Coin Value, MCAP
@@ -41,13 +48,28 @@ const MarketAssets = () => {
         }
 
         apiCall()
+
     },[currencyValue,cryptoValue])
+
+   
+    const crypto_symbol = (data) => {
+        console.log("infinite?")
+        switch(data){
+            case "BTC": return <BTC/>;
+            case "EOS": return <EOS/>;
+            case "ETH": return <ETH/>;
+            case "XLM": return <XLM/>;
+            default: return "#"
+        }
+    }
 
 
     return(
-        <div>
-            {currencies.details.symbol} {(currencies.name).toUpperCase()} <span>{(currencies.id).toUpperCase()} </span>
-        </div>
+        <CurrencyInfoContainer>
+            {crypto_symbol(currencies.id)}
+            <CurrencyTitle>{(currencies.name).toUpperCase()}</CurrencyTitle>
+            <CurrencyId>{(currencies.id).toUpperCase()} </CurrencyId>
+        </CurrencyInfoContainer>
     )
 }
 

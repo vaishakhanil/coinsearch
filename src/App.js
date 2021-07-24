@@ -4,7 +4,7 @@ import {CurrencyContextProvider} from './context/currency-context';
 import {CryptoContextProvider} from './context/crypto-context';
 
 import {ThemeToggle} from './layout/ThemeToggle'
-// import {SideBar} from './layout/SideBar'
+
 import {MainComponent} from './layout/MainComponent'
 
 const App = () => {
