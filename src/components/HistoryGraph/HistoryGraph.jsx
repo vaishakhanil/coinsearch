@@ -8,7 +8,7 @@ import {format_data} from '../../utils/format_data';
 
 
 
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 
 
 /**

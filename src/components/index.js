@@ -5,3 +5,5 @@ export {default as CryptoSet} from './CryptoSet';
 export {default as CurrentPrice} from './CurrentPrice';
 
 export {default as HistoryGraph} from './HistoryGraph';
+
+export {default as ThemeSet} from './ThemeSet';

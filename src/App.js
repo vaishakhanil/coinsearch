@@ -3,22 +3,28 @@ import './styles/App.css';
 import {CurrencyContextProvider} from './context/currency-context';
 import {CryptoContextProvider} from './context/crypto-context'
 
-import {MarketAssets, CurrencySet, CryptoSet, CurrentPrice, HistoryGraph} from './components';
+import {MarketAssets, CurrencySet, CurrentPrice, HistoryGraph} from './components';
+
+import {ThemeToggle} from './layout/ThemeToggle'
+import {SideBar} from './layout/SideBar'
 
 const App = () => {
 
   return(
+    <ThemeToggle>
     <CurrencyContextProvider>
       <CryptoContextProvider>
         <CurrencySet/>
         <MarketAssets/>
-        <CryptoSet/>
 
-        {/* <CurrentPrice/> */}
+        <CurrentPrice/>
 
         <HistoryGraph/>
+
+        <SideBar/>
       </CryptoContextProvider>
     </CurrencyContextProvider>
+    </ThemeToggle>
   )
 }
 
