@@ -24,7 +24,7 @@ const MarketAssets = () => {
     useEffect(() => {
         let items = [];
         const apiCall = async() => {
-            await fetch(`${base_url}/products/${cryptoValue}-${currencyValue}/stats`)
+            await fetch(`${base_url}/currencies/${cryptoValue}`)
             .then((res) => res.json())
             .then((data) => (items = data))
             .catch((err) => console.log(err));
@@ -34,15 +34,17 @@ const MarketAssets = () => {
         }
 
         apiCall()
-    },[currencyValue])
+    },[currencyValue,cryptoValue])
 
 
 
     return(
         <div>
             {/* {currencies.map(item => (<div>{item.volume} = {item.open}</div>))} */}
-            {currencies.volume} = {Number(currencies.open).toLocaleString()} <br/>
-            {cryptoValue}
+            {/* {currencies.volume} = {Number(currencies.open).toLocaleString()} <br/>
+            {cryptoValue} */}
+            {currencies.name} {currencies.id}
+            {/* Type: {currencies.details.type}  */}
         </div>
     )
 }

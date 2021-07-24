@@ -1,12 +1,11 @@
 import React from 'react';
 import './styles/App.css';
 import {CurrencyContextProvider} from './context/currency-context';
-import {CryptoContextProvider} from './context/crypto-context'
-
-import {MarketAssets, CurrencySet, CurrentPrice, HistoryGraph} from './components';
+import {CryptoContextProvider} from './context/crypto-context';
 
 import {ThemeToggle} from './layout/ThemeToggle'
-import {SideBar} from './layout/SideBar'
+// import {SideBar} from './layout/SideBar'
+import {MainComponent} from './layout/MainComponent'
 
 const App = () => {
 
@@ -14,14 +13,7 @@ const App = () => {
     <ThemeToggle>
     <CurrencyContextProvider>
       <CryptoContextProvider>
-        <CurrencySet/>
-        <MarketAssets/>
-
-        <CurrentPrice/>
-
-        <HistoryGraph/>
-
-        <SideBar/>
+        <MainComponent/>
       </CryptoContextProvider>
     </CurrencyContextProvider>
     </ThemeToggle>

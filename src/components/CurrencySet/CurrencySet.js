@@ -1,5 +1,6 @@
 import React,{useContext,useRef} from 'react';
 import {CurrencyContext} from '../../context/currency-context';
+import styled from 'styled-components';
 
 /**
  * Set Currency Value
@@ -17,7 +18,6 @@ const CurrencySet = () => {
         <select ref={selectRef} onChange={set_currency_value}>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
         </select>
     )
 }

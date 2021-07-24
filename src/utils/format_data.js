@@ -23,8 +23,8 @@ export const format_data = (data,name) => {
            
             label: "Highs",
             data: [],
-            backgroundColor: "rgba(55, 252, 108, 0.8)",
-            borderColor: "rgba(55, 252, 108, 0.2)",
+            backgroundColor: "rgba(37, 252, 95, 0.8)",
+            borderColor: "rgba(37, 252, 95, 0.2)",
             fill: false
           }
         ]
@@ -62,7 +62,7 @@ export const format_data = (data,name) => {
       dates.reverse();
     
       //set data labels as the date array for ChartJS
-      finalData.labels = dates.slice(0,100);
+      finalData.labels = dates.slice(200,500);
     
       //price array will be used as dataset for ChartJS
       finalData.datasets[0].data = prices;

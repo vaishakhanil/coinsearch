@@ -6,7 +6,7 @@ import {CryptoContext} from '../../context/crypto-context';
 
 import {format_data} from '../../utils/format_data';
 
-
+import styled from 'styled-components';
 
 import { Line, Bar } from "react-chartjs-2";
 
@@ -23,7 +23,25 @@ const HistoryGraph = () => {
     const [cachedData, setCachedData] = useState([]);
     const [plotData, setPlotData] = useState({});
 
+    const options = {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: false,
+              },
+            },
+          ],
+        },
+      };
+
     
+    const GraphWrapper = styled.div`
+      width: 60vw;
+      height: 40vw;
+    `;
+
+
     /**
      * To reduce / prevent polling of historical data of same value multiple times 
      */
@@ -56,9 +74,9 @@ const HistoryGraph = () => {
 
 
     return(
-        <div>
-            <Line data={plotData} />
-        </div>
+        <GraphWrapper>
+            <Line data={plotData} options={options} />
+        </GraphWrapper>
     )
 }
 

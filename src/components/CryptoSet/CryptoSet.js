@@ -1,5 +1,12 @@
-import React,{useRef,useContext} from 'react';
+import React,{useContext} from 'react';
 import {CryptoContext} from '../../context/crypto-context';
+import {ReactComponent as Stellar} from '../../assets/svg/stellar.svg';
+import {ReactComponent as EOS} from '../../assets/svg/EOS.svg';
+import {ReactComponent as BTC} from '../../assets/svg/BTC.svg';
+import {ReactComponent as ETH} from '../../assets/svg/ETH.svg';
+
+import styled from 'styled-components';
+
 
 
 /**
@@ -13,12 +20,39 @@ const CryptoSet = () => {
         setCryptoValue(e.target.value)
     }
 
+    const Button = styled.button`
+        border:0;
+        background: ${({theme}) => theme.lightBg};
+
+        & > svg {
+            fill: ${({theme}) => theme.text};
+            pointer-events: none;
+            transition: all 250ms ease-in;
+        }
+
+        &:hover{
+            & > svg { 
+                fill: ${({theme}) => theme.toggle};
+            }
+        }
+    `;
+
+
+    const ButtonContainer = styled.div`
+        height: 50vh;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        align-items:center;
+    `;
+
     return(
-        <div>
-            <button value="BTC" onClick={set_crypto_value}>BTC</button>
-            <button value="ETH" onClick={set_crypto_value}>ETH</button>
-            <button value="LTH" onClick={set_crypto_value}>LTH</button>
-        </div>
+        <ButtonContainer>
+            <Button value="BTC" onClick={set_crypto_value}><BTC/></Button>
+            <Button value="ETH" onClick={set_crypto_value}><ETH/></Button>
+            <Button value="XLM" onClick={set_crypto_value}> <Stellar/> </Button>
+            <Button value="EOS" onClick={set_crypto_value}><EOS/></Button>
+        </ButtonContainer>
     )
 }
 
