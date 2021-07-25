@@ -2,7 +2,7 @@ import React,{useState, useEffect, useContext, useRef} from 'react';
 import {CurrencyContext} from '../../context/currency-context'
 import {CryptoContext} from '../../context/crypto-context';
 
-import {PriceValue} from './CurrentPrice.styles'
+import {PriceValue, StockInfoContainer, StockItemContainer, StockItemTitle, StockItemValue} from './CurrentPrice.styles'
 
 const CurrentPrice = () => {
     const [currencyValue] = useContext(CurrencyContext) //Context Provider [USD, EUR, GBP]
@@ -10,6 +10,7 @@ const CurrentPrice = () => {
 
     const [queryValue, setQueryValue] = useState("BTC-USD");
     const [prices, setPrices] = useState("");
+    const [marketInfo, setMarketInfo] = useState({});
 
     let subscribeMessage = {
         type: "subscribe",
@@ -56,7 +57,8 @@ const CurrentPrice = () => {
             }
             if(data.product_id === queryValue){
                 console.log(data);
-                setPrices(Number(data.price).toLocaleString())
+                setPrices(Number(data.price).toLocaleString());
+                setMarketInfo(data);
             }
         }
 
@@ -86,6 +88,44 @@ const CurrentPrice = () => {
     <PriceValue>
         {(currencyValue === "USD") ? "$" : "€"} {prices}
     </PriceValue>
+
+    <StockInfoContainer>
+        <StockItemContainer>
+            <StockItemTitle>BEST BID</StockItemTitle> 
+            <StockItemValue>{Number(marketInfo.best_bid).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+        
+        <StockItemContainer>
+            <StockItemTitle>HIGH 24H</StockItemTitle> 
+            <StockItemValue value="high">{Number(marketInfo.high_24h).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+        
+        <StockItemContainer>
+            <StockItemTitle>LOW 24H</StockItemTitle> 
+            <StockItemValue value="low">{Number(marketInfo.low_24h).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+
+        <StockItemContainer>
+            <StockItemTitle>OPEN 24H</StockItemTitle> 
+            <StockItemValue>{Number(marketInfo.open_24h).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+        
+        <StockItemContainer>
+            <StockItemTitle>VOLUME 24H</StockItemTitle> 
+            <StockItemValue>{Number(marketInfo.volume_24h).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+        
+        <StockItemContainer>
+             <StockItemTitle>VOLUME 30D:</StockItemTitle> 
+             <StockItemValue>{Number(marketInfo.volume_30d).toLocaleString()}</StockItemValue>
+        </StockItemContainer>
+
+    </StockInfoContainer>
     </>
     )
 }

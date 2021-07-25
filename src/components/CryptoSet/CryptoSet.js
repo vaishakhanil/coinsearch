@@ -7,8 +7,6 @@ import {ReactComponent as ETH} from '../../assets/svg/ETH.svg';
 
 import styled from 'styled-components';
 
-
-
 /**
  * Set Cryptocurrency Code
  */
