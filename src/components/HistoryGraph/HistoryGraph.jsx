@@ -6,9 +6,10 @@ import {CryptoContext} from '../../context/crypto-context';
 
 import {format_data} from '../../utils/format_data';
 
-import styled from 'styled-components';
+import {GraphWrapper} from './HistoryGraph.styles';
 
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
+
 
 
 /**
@@ -22,30 +23,6 @@ const HistoryGraph = () => {
 
     const [cachedData, setCachedData] = useState([]);
     const [plotData, setPlotData] = useState({});
-
-    const options = {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: false,
-              },
-            },
-          ],
-        },
-      };
-
-    
-    const GraphWrapper = styled.div`
-      width: 60vw;
-      height: 40vw;
-      display:flex;
-      flex-direction: column;
-      justify-content:space-evenly;
-      @media only screen and (min-width: 300px) and (max-width: 500px){
-        display: none;
-      }
-    `;
 
 
     /**
@@ -82,7 +59,7 @@ const HistoryGraph = () => {
     return(
         <GraphWrapper>
             <span>Historical Graph</span>
-            <Line data={plotData} options={options} />
+            <Line data={plotData}/>
         </GraphWrapper>
     )
 }

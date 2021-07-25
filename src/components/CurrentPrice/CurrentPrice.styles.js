@@ -21,6 +21,11 @@ export const PriceValue = styled.h3`
     font-weight: 500;
     margin-left: 2vw;
     margin-top: 1vw;
+
+    
+    @media only screen and (min-width: 300px) and (max-width: 500px){
+        font-size: 4.25vw;
+    }
 `;
 
 export const StockInfoContainer = styled(FlexContainer)`
@@ -39,12 +44,23 @@ export const StockItemContainer = styled(FlexContainer)`
     padding: 1vw 2vw;
     justify-content: space-between;
     align-items:center;
+    
+    @media only screen and (min-width: 300px) and (max-width: 500px){
+        width: 60vw;
+        padding: 6vw 4vw;
+    }
+
 `;
 
 export const StockItemTitle = styled.span`
     font-size: 1.25vw;
     font-weight: bold;
     color: ${({theme}) => theme.fadeText};
+
+    
+    @media only screen and (min-width: 300px) and (max-width: 500px){
+        font-size: 3.25vw;
+    }
 `;
 
 export const StockItemValue = styled.span`
@@ -52,4 +68,8 @@ export const StockItemValue = styled.span`
     font-weight: bold;
 
     color: ${({value,theme}) => valueColor(value,theme)};
+    
+    @media only screen and (min-width: 300px) and (max-width: 500px){
+        font-size: 4.25vw;
+    }
 `;

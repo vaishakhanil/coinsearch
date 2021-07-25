@@ -30,19 +30,9 @@ const Header = styled(FlexContainer)`
     }
 `;
 
-
-
 const Dashboard = styled(FlexContainer)`
     width: 99%;
     height: 90%;
-
-    @media only screen and (min-width: 300px) and (max-width: 500px){
-        width: 100%;
-        height: 100%;
-
-        ${GlobalComponents.flexColumn};
-        ${GlobalComponents.alignCenter};
-    }
 `
 
 const Heading = styled(FlexContainer)`

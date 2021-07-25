@@ -7,16 +7,18 @@ export const format_data = (data,name) => {
           
             label: "Price",
             data: [],
-            backgroundColor: "rgba(140, 7, 249, 0.8)",
-            borderColor: "rgba(140, 7, 249, 0.2)",
-            fill: false
+            backgroundColor: "rgba(15, 163, 255, 0.8)",
+            borderColor: "rgba(15, 163, 255, 0.6)",
+            fill: false,
+            pointRadius: 1.5
           },{
            
             label: "Lows",
             data: [],
             backgroundColor: "rgba(252, 55, 91, 0.8)",
-            borderColor: "rgba(252, 55, 91, 0.2)",
-            fill: false
+            borderColor: "rgba(252, 55, 91, 0.6)",
+            fill: false,
+            pointRadius: 1.5
           },
           {
             
@@ -24,8 +26,9 @@ export const format_data = (data,name) => {
             label: "Highs",
             data: [],
             backgroundColor: "rgba(37, 252, 95, 0.8)",
-            borderColor: "rgba(37, 252, 95, 0.2)",
-            fill: false
+            borderColor: "rgba(37, 252, 95, 0.6)",
+            fill: false,
+            pointRadius: 1.5
           }
         ]
       };

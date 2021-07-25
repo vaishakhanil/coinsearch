@@ -7,6 +7,7 @@ span{
 }
 
 .credits{
+    font-size: 1vw;
     width: 100%;
     position: fixed;
     z-index: 10;

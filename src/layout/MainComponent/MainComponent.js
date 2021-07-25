@@ -31,7 +31,7 @@ export const MainComponent = () => {
                     <HistoryGraph/>
                 </Dashboard>
                 
-               <a href="https://docs.pro.coinbase.com/" target="_blank" rel="noreferrer noopener"><span className="credits">DATA FROM COINBASE API</span></a>
+               <a href="https://docs.pro.coinbase.com/" target="_blank" rel="noreferrer noopener"><span className="credits">PERSONAL PROJECT BY VAISHAKH ANIL | DATA FROM COINBASE API</span></a>
             </Display>
         </Layout>
     )

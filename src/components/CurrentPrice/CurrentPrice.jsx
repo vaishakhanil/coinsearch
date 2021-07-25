@@ -83,6 +83,7 @@ const CurrentPrice = () => {
         }
     },[])
 
+
     return(
     <>
     <PriceValue>
@@ -121,7 +122,7 @@ const CurrentPrice = () => {
 
         
         <StockItemContainer>
-             <StockItemTitle>VOLUME 30D:</StockItemTitle> 
+             <StockItemTitle>VOLUME 30D</StockItemTitle> 
              <StockItemValue>{Number(marketInfo.volume_30d).toLocaleString()}</StockItemValue>
         </StockItemContainer>
 
