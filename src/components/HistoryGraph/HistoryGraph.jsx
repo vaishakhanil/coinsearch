@@ -6,7 +6,7 @@ import {CryptoContext} from '../../context/crypto-context';
 
 import {format_data} from '../../utils/format_data';
 
-import {GraphWrapper} from './HistoryGraph.styles';
+import {GraphWrapper, GraphTitle} from './HistoryGraph.styles';
 
 import { Line } from "react-chartjs-2";
 
@@ -58,7 +58,7 @@ const HistoryGraph = () => {
 
     return(
         <GraphWrapper>
-            <span>Historical Graph</span>
+            <GraphTitle>Historical Graph</GraphTitle>
             <Line data={plotData}/>
         </GraphWrapper>
     )

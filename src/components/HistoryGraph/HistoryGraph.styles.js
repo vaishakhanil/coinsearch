@@ -11,3 +11,7 @@ export const GraphWrapper = styled.div`
       display: none;
     }
 `;
+
+export const GraphTitle = styled.h5`
+    font-size: 1.5vw;
+`;
