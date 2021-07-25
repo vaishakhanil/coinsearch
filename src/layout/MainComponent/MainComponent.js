@@ -19,7 +19,7 @@ export const MainComponent = () => {
                 <Header>
                     <AppName>coinsearch</AppName>
                     <CurrencySet/>
-                    <a href="https://vaishakhanil.github.io/" target="_blank"><Github/></a> 
+                    <a href="https://github.com/vaishakhanil/coinsearch" target="_blank"><Github/></a> 
                 </Header>
                 
                 <Dashboard>
