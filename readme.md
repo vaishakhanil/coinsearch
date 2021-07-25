@@ -13,6 +13,12 @@
 > API Endpoints: [https://api.pro.coinbase.com/](https://api.pro.coinbase.com/) <br/>
 > Coinbase API Docs: [https://docs.pro.coinbase.com/](https://docs.pro.coinbase.com/)
 
+### User Interface:
+
+Dark Theme | Light Theme 
+------------ | -------------
+![DarkVersion](https://res.cloudinary.com/vaishakhanil/image/upload/v1627224183/coinsearch/DarkTheme_yj3s1m.jpg) | ![LightVersion](https://res.cloudinary.com/vaishakhanil/image/upload/v1627224199/coinsearch/LightTheme_n5rlmc.jpg)
+
 ### About coinsearch:
 
 coinsearch is UI project that displays market value in USD / EUR for selected cryptocurrency coins. The project explores 
